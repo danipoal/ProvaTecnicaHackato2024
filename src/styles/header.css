@@ -1,0 +1,12 @@
+.header-nav{
+    width: 100vw;
+    height: 15vh;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+.logo-image{
+    width: 15%;
+}
