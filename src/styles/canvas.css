@@ -9,7 +9,62 @@
 .avatar-container{
     width: 400px;
     border: red solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cartoon-container{
+    border: 1px blue solid;
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 .avatar-image{
+    margin-top: 30px;
     height: 120px;
+    width: 120px;
+    z-index: 1;
+    margin-bottom: -80px;
+}
+
+.trapecio-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+}
+.svg{
+    margin-top: -12px;
+    scale: 1;
+    height: 300px;
+    opacity: 0.6;
+    position: relative;
+}
+.generator-text{
+    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 100%;
+    color: black;
+    padding:0 40px;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    top: 70px;
+    left: 0;
+}
+.generator-button{
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    height: 40px;
+    background-color: black;
+    color: white;
 }

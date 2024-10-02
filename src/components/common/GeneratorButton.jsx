@@ -1,6 +1,7 @@
-const GeneratorButton = () => {
+/* eslint-disable react/prop-types */
+const GeneratorButton = ({className}) => {
     return(
-        <button className="generator-button">Generar</button>
+        <button className={className}>Generar</button>
     );
 
 }
