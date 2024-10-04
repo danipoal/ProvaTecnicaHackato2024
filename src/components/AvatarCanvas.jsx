@@ -7,7 +7,7 @@ const AvatarCanvas = () => {
             <div className="avatar-container">
                 <div className='button-container'>
                     <TypeButton text="Social"/>
-                    <TypeButton text="Educacuió"/>
+                    <TypeButton text="Educació"/>
                     <TypeButton text="Caritat"/>
                     <TypeButton text="Cuinar"/>
                     <TypeButton text="Relaxació"/>

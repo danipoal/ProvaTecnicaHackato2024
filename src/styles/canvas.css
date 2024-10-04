@@ -1,22 +1,33 @@
 .activity-container{
     width: 400px;
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.activity-container p{
+    margin-top: 0;
+    font-weight: 600;
+}
+
 .avatar-container{
     width: 400px;
-    border: red solid 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
 }
+.button-container{
+    width: 80%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+
+}
 .cartoon-container{
-    border: 1px blue solid;
     width: 80%;
     overflow: hidden;
     display: flex;
@@ -45,12 +56,11 @@
     margin-top: -12px;
     scale: 1;
     height: 300px;
-    opacity: 0.6;
+    opacity: 0.08;
     position: relative;
 }
 .generator-text{
-    font-size: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 100%;
     color: black;
     padding:0 40px;
@@ -68,3 +78,23 @@
     background-color: black;
     color: white;
 }
+
+@media (max-width: 768px){
+
+.avatar-container{
+    align-self: center;
+}
+.activity-container{
+    align-self: center;
+}
+.activity-container h2{
+    margin-top: -30px;
+}
+.button-container{
+    height: 80px;
+}
+.button-container :nth-last-child(1),
+.button-container :nth-last-child(2){
+    display: none;
+}
+    }

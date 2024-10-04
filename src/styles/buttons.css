@@ -1,6 +1,31 @@
 .type-button{
-
+    
+    width: fit-content;
+    margin: 5px 3px;
+    padding: 4px 12px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    font-size: 0.857rem;
+    background-color: hsla(0, 0%, 50%, 0.08);
+    
+}
+.type-button:focus{
+    background-color: rgb(124 80 242);
+    color: white;
+    outline: none;
 }
 .generator-button{
+    padding: 0 30px;
     
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(241, 241, 241);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }

@@ -1,11 +1,22 @@
+
 .main-div{
-    height: 85vh;
     width: 100vw;
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
 }
 .separator{
-    border: 1px dashed gray;
-    margin: 10px 0;
+    width: 1px;
+    background-image: linear-gradient(black 33%, rgba(255,255,255,0) 0%);
+    background-position: right;
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+}
+@media (min-width: 320px) and (max-width: 768px){
+
+    .main-div{
+        flex-direction: column;
+    }
+    .separator{
+        display: none;
+    }
 }
