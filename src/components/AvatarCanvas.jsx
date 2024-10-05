@@ -1,17 +1,24 @@
+import { useState } from 'react';
 import avatarImage from '../assets/Avatar-nobg.png'
 import GeneratorButton from './common/GeneratorButton';
 import TypeButton from './common/TypeButton';
 
 const AvatarCanvas = () => {
+
+    const [type, setType] = useState(null);
+    const handleTypeChange = (urlType) => {
+        setType(urlType);
+    }
+
     return (
             <div className="avatar-container">
                 <div className='button-container'>
-                    <TypeButton text="Social"/>
-                    <TypeButton text="Educació"/>
-                    <TypeButton text="Caritat"/>
-                    <TypeButton text="Cuinar"/>
-                    <TypeButton text="Relaxació"/>
-                    <TypeButton text="Treball Intens"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Social"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Educació"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Cuinar"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Caritat"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Relaxació"/>
+                    <TypeButton onTypeChange={handleTypeChange} text="Treball Intens"/>
                 </div>
                 <div className='cartoon-container'>
                     <img src={avatarImage} alt="" className='avatar-image'/>
@@ -30,7 +37,7 @@ const AvatarCanvas = () => {
                             fill="gray"/>
                         </svg>
                         <h3 className='generator-text'>TROBA ALGUNA COSA A FER</h3>
-                        <GeneratorButton className='generator-button'/>
+                        <GeneratorButton type={type} className='generator-button'/>
                     </div>
 
                 </div>
