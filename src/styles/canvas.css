@@ -86,12 +86,14 @@
 }
 .activity-container{
     align-self: center;
+    width: 80vw;
 }
 .activity-container h2{
     margin-top: -30px;
 }
 .button-container{
-    height: 80px;
+    width: 80vw;
+    height: 100px;
 }
 .button-container :nth-last-child(1),
 .button-container :nth-last-child(2){

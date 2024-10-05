@@ -1,43 +1,51 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { UrlContext } from "../utils/UrlContext";
 import { useContext, useEffect, useState } from "react";
 
 const ActivityCanvas = () => {
-
-    const { url } = useContext(UrlContext);
+    const { url, setUrl } = useContext(UrlContext);
     const [activityText, setActivityText] = useState("Text a friend who did that...");
 
     useEffect(() => {
-        if(url){
-              console.log(url);
-        const requestOptions = {
-            method: "GET",
-            redirect: "follow",
-            headers : {'Content-Type': 'application/json',}
-          };
-          
-          fetch(url, requestOptions)
-            .then((response) => response.text())
-            .then((result) =>{ 
-                if (url === "/api/random") {
-                    console.log(result);
-                    setActivityText(result.activity);
-                }else{
-                    
-                    console.log(result[1].activity);
-                    setActivityText(result[1].activity);
-                }
-                
+        if (url) {
+            console.log(url);
 
-            })
-            .catch((error) => {
-                console.error(error);
-                setActivityText(`Error: ${error.message || 'Error de servidor'}`);
-            });
+            const requestOptions = {
+                method: "GET",
+                redirect: "follow",
+                headers: { 'Content-Type': 'application/json' }
+            };
+
+            fetch(url, requestOptions)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Error ${response.status}: ${response.statusText}`);
+                    }
+                    return response.json(); 
+                })
+                .then((result) => {
+                    if (url === "/api/random") {
+                        if (result && result.activity) {
+                            setActivityText(result.activity);
+                        }
+                    } else {
+                        if (result && result[0] && result[0].activity) {
+                            const indice = Math.floor(Math.random() * result.length)
+                            
+                            
+                            setActivityText(result[indice].activity);
+                        }
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                    setActivityText(`Error: ${error.message}`);
+                });
         }
-      
-    }, [url])
-
-
+    }, [url]);
+    useEffect(()=> {
+        setUrl("");
+    }, [activityText])
 
     return (
         <div className="activity-container">
@@ -45,5 +53,5 @@ const ActivityCanvas = () => {
             <p>{activityText}</p>            
         </div>
     );
-}
+};
 export default ActivityCanvas;
