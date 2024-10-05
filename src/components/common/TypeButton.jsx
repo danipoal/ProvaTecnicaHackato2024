@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 
-const TypeButton = ({text, onTypeChange}) => {
+const TypeButton = ({text, onUrlChange}) => {
     const [typeButton, setTypeButton] = useState(null)
-    
     const [urlType, setUrlType] = useState(null)
+    
+    
     useEffect(() => {
         setTypeButton(text)
         switch (text) {
@@ -31,9 +32,10 @@ const TypeButton = ({text, onTypeChange}) => {
             default:
                 break;
         }
-    }, [text])
+    }, [text]);
+
     const handleClick = () => {
-        onTypeChange(urlType);
+            onUrlChange(urlType);
     }
 
     

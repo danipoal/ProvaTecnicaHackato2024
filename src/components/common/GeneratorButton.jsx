@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { UrlContext } from "../../utils/UrlContext";
 
 /* eslint-disable react/prop-types */
 const GeneratorButton = ({className, type}) => {
 
-    const [url, setUrl] = useState(null)
-
-    useEffect(() => {
-        if (!type) {
-            setUrl("https://bored-api.appbrewery.com/random");
-        }else{
-            setUrl("https://bored-api.appbrewery.com/filter?type=education" + type);
-        }
-    }, [type])
+    const {url, setUrl} = useContext(UrlContext)
 
     const handleClick = () => {
-        console.log(url);
+        if (!type) {
+            setUrl("/api/random");
+        }else{
+            setUrl("/api/filter?type=" + type);
+        }
+        //console.log(url);
     }
 
     return(

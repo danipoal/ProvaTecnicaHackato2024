@@ -13,12 +13,12 @@ const AvatarCanvas = () => {
     return (
             <div className="avatar-container">
                 <div className='button-container'>
-                    <TypeButton onTypeChange={handleTypeChange} text="Social"/>
-                    <TypeButton onTypeChange={handleTypeChange} text="Educació"/>
-                    <TypeButton onTypeChange={handleTypeChange} text="Cuinar"/>
-                    <TypeButton onTypeChange={handleTypeChange} text="Caritat"/>
-                    <TypeButton onTypeChange={handleTypeChange} text="Relaxació"/>
-                    <TypeButton onTypeChange={handleTypeChange} text="Treball Intens"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Social"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Educació"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Cuinar"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Caritat"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Relaxació"/>
+                    <TypeButton onUrlChange={handleTypeChange} text="Treball Intens"/>
                 </div>
                 <div className='cartoon-container'>
                     <img src={avatarImage} alt="" className='avatar-image'/>
