@@ -6,6 +6,7 @@ const ActivityCanvas = () => {
     const { url, setUrl } = useContext(UrlContext);
     const [activityText, setActivityText] = useState("Text a friend who did that...");
 
+
     useEffect(() => {
         if (url) {
             console.log(url);
@@ -24,15 +25,13 @@ const ActivityCanvas = () => {
                     return response.json(); 
                 })
                 .then((result) => {
-                    if (url === "/api/random") {
+                    if (url === "/api/random" ) {
                         if (result && result.activity) {
                             setActivityText(result.activity);
                         }
                     } else {
                         if (result && result[0] && result[0].activity) {
                             const indice = Math.floor(Math.random() * result.length)
-                            
-                            
                             setActivityText(result[indice].activity);
                         }
                     }
@@ -43,6 +42,7 @@ const ActivityCanvas = () => {
                 });
         }
     }, [url]);
+
     useEffect(()=> {
         setUrl("");
     }, [activityText])

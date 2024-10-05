@@ -6,10 +6,17 @@ import TypeButton from './common/TypeButton';
 const AvatarCanvas = () => {
 
     const [type, setType] = useState(null);
+
     const handleTypeChange = (urlType) => {
         setType(urlType);
     }
 
+    const handleGenClick = (isGenCLicked) => {
+        if (isGenCLicked) {
+            setType(null);
+        }
+        
+    }
     return (
             <div className="avatar-container">
                 <div className='button-container'>
@@ -37,7 +44,7 @@ const AvatarCanvas = () => {
                             fill="gray"/>
                         </svg>
                         <h3 className='generator-text'>TROBA ALGUNA COSA A FER</h3>
-                        <GeneratorButton type={type} className='generator-button'/>
+                        <GeneratorButton onGenClicked={handleGenClick} type={type} className='generator-button'/>
                     </div>
 
                 </div>

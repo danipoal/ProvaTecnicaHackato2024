@@ -35,7 +35,7 @@ const TypeButton = ({text, onUrlChange}) => {
     }, [text]);
 
     const handleClick = () => {
-            onUrlChange(urlType);
+        onUrlChange(urlType);
     }
 
     
