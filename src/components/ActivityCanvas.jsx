@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 const ActivityCanvas = () => {
     const { url, setUrl } = useContext(UrlContext);
     const [activityText, setActivityText] = useState("Text a friend who did that...");
-    const [contador, setContador] = useState(0);
+
 
     useEffect(() => {
         if (url) {
@@ -25,7 +25,7 @@ const ActivityCanvas = () => {
                     return response.json(); 
                 })
                 .then((result) => {
-                    if (url === "/api/random" || contador > 0) {
+                    if (url === "/api/random" ) {
                         if (result && result.activity) {
                             setActivityText(result.activity);
                         }
@@ -33,7 +33,6 @@ const ActivityCanvas = () => {
                         if (result && result[0] && result[0].activity) {
                             const indice = Math.floor(Math.random() * result.length)
                             setActivityText(result[indice].activity);
-                            setContador(1);
                         }
                     }
                 })
@@ -43,6 +42,7 @@ const ActivityCanvas = () => {
                 });
         }
     }, [url]);
+
     useEffect(()=> {
         setUrl("");
     }, [activityText])
