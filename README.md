@@ -29,7 +29,7 @@ Al canvas de l'avatar hi trobem la logica que aplica els filtres i que s'executa
     ```
 3. Executa el projecte:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Tecnologies
