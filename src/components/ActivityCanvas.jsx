@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 const ActivityCanvas = () => {
     const { url, setUrl } = useContext(UrlContext);
     const [activityText, setActivityText] = useState("Text a friend who did that...");
+    const [count, setCount] = useState(0);
 
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const ActivityCanvas = () => {
 
             fetch(url, requestOptions)
                 .then((response) => {
+                    setCount(count + 1);
                     if (!response.ok) {
                         throw new Error(`Error ${response.status}: ${response.statusText}`);
                     }
@@ -45,7 +47,7 @@ const ActivityCanvas = () => {
 
     useEffect(()=> {
         setUrl("");
-    }, [activityText])
+    }, [activityText, count])
 
     return (
         <div className="activity-container">
