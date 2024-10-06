@@ -21,7 +21,7 @@ Al canvas de l'avatar hi trobem la logica que aplica els filtres i que s'executa
 
 1. Clona el repositori:
     ```bash
-    git clone https://github.com/usuario/repositorio.git
+    git clone https://github.com/danipoal/ProvaTecnicaHackato2024.git
     ```
 2. Instala las dependencies:
     ```bash
